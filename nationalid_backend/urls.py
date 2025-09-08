@@ -21,6 +21,6 @@ from users.views import NationalIDUserCreateView, NationalIDUserRetrieveView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/create', NationalIDUserCreateView.as_view(), name='create_user'),
-    path('users/<str:national_id>', NationalIDUserRetrieveView.as_view(), name='user-by-national-id'),
+    path('api/users/create', NationalIDUserCreateView.as_view(), name='create_user'),
+    path('api/users/<str:national_id>', NationalIDUserRetrieveView.as_view(), name='user-by-national-id'),
 ]
