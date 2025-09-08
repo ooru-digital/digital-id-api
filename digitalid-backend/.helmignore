@@ -21,3 +21,11 @@
 .idea/
 *.tmproj
 .vscode/
+
+*.db
+*.log
+*.tmp
+*.swp
+.DS_Store
+.idea/
+.vscode/
