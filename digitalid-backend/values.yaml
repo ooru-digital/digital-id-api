@@ -22,7 +22,7 @@ service:
 env:
   DB_NAME: ""
   DB_USER: ""
-  DB_PASSWORD: "y"
+  DB_PASSWORD: ""
   DB_HOST: postgres.digital.credissuer.com
   DB_PORT: "5432"
 # Pod labels
