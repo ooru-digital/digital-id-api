@@ -20,9 +20,9 @@ service:
   port: 8000
 # Environment variables for the container
 env:
-  DB_NAME: "digitalid_initdb"
-  DB_USER: "digitalid_initdb"
-  DB_PASSWORD: "digitalid_initdb"
+  DB_NAME: ""
+  DB_USER: ""
+  DB_PASSWORD: "y"
   DB_HOST: postgres.digital.credissuer.com
   DB_PORT: "5432"
 # Pod labels
