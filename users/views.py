@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import generics
 from .models import NationalIDUser
-from .serializers import NationalIDUserSerializer
+from .serializers import NationalIDUserResponseSerializer, NationalIDUserSerializer
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -29,7 +29,7 @@ class NationalIDUserRetrieveView(APIView):
         try:
             # Query the database based on national_id_number
             user = NationalIDUser.objects.get(national_id_number=national_id)
-            serializer = NationalIDUserSerializer(user)
+            serializer = NationalIDUserResponseSerializer(user)
             
             return Response(
                 {
