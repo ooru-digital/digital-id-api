@@ -1,0 +1,65 @@
+# Number of replicas
+replicaCount: 1
+
+# Namespace for deployment
+namespace: digitalid
+
+# Container image configuration
+image:
+  repository: nandeesh756/digital-id-api
+  tag: v1.0.1
+  pullPolicy: IfNotPresent
+
+# ServiceAccount configuration
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+# Kubernetes Service
+service:
+  name: digitalid-backend
+  type: ClusterIP
+  port: 8000
+
+# Environment variables for the container
+env:
+  DB_NAME: "digitalid_db"
+  DB_USER: "nationalid"
+  DB_PASSWORD: "Di6AAUpbjr"
+  DB_HOST: "postgres-postgresql.postgres.svc.cluster.local"
+  DB_PORT: "5432"
+
+# Pod labels
+labels:
+  app: digitalid-backend
+
+# Pod annotations
+annotations: {}
+
+# Istio disabled
+gateway: {}
+virtualservice: {}
+
+# Ingress configuration
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: id.assembly.govstack.global
+      paths:
+        - path: /api
+          pathType: ImplementationSpecific
+  tls: []
+
+# Horizontal Pod Autoscaler (HPA) configuration
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+# Resource requests and limits
+resources: {}
