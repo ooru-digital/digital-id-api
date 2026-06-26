@@ -30,11 +30,11 @@ services:
       db:
         condition: service_healthy
     environment:
-      DB_NAME: nationalid_db
-      DB_USER: nationalid_user
-      DB_PASSWORD: nationalid_pass
-      DB_HOST: db
-      DB_PORT: 5432
+      DB_NAME:
+      DB_USER:
+      DB_PASSWORD:
+      DB_HOST:
+      DB_PORT:
 
 volumes:
   postgres_data:
